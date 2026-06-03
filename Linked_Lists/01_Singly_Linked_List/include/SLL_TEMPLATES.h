@@ -24,8 +24,6 @@
         size_t size;\
     } NAME;\
 \
-    SLL_Status NAME##_create_list(NAME** new_list);\
-\
 \
     /*FUNCTIONS*/\
 \
@@ -35,10 +33,10 @@
 \
     SLL_Status NAME##_delete_head(NAME* list, TYPE* out_data);\
     SLL_Status NAME##_delete_tail(NAME* list, TYPE* out_data);\
-    SLL_Status NAME##_delete_pos(NAME* list, size_t pos, TYPE* out_data);\
+    SLL_Status NAME##_delete_at(NAME* list, size_t pos, TYPE* out_data);\
 \
     SLL_Status NAME##_visualize(NAME* list, void (*view_function)(const TYPE* data));\
-    SLL_Status NAME##_filter(NAME* list, void (*filter_function)(const TYPE* data), NAME* new_list);\
+    SLL_Status NAME##_filter(NAME* list, int (*filter_function)(const TYPE* data), NAME* filtered_list);\
     SLL_Status NAME##_merge_sort(NAME* list);\
     SLL_Status NAME##_clear_list(NAME* list);
 
